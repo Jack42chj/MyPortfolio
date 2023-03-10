@@ -1,16 +1,19 @@
-import { Typography, Stack } from "@mui/material";
+import { Typography, Stack, useTheme, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import { useEffect, useState } from "react";
 import MainLogo from "../assets/Main.jpg";
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 const Section = styled(Stack)({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "60vh",
+    height: "55vh",
 });
 
 const Main = () => {
+    const theme = useTheme();
+
     const completeWord = "\"日就月將\"하는 프론트엔드 개발자를 꿈꾸는 최호진 입니다.";
     const [text, setText] = useState('');
     const [count, setCount] = useState(0);
@@ -35,25 +38,33 @@ const Main = () => {
     });
 
     return(
-        <>
-            <Section sx={{ backgroundImage: `url(${MainLogo})`, backgroundSize: 'cover', justifyContent: "center" }}>
-                <Typography
-                    variant="h3"
-                    fontWeight="700"
-                    sx={{ color: "white" }}
-                >
-                    최호진's 포트폴리오
-                </Typography>
-                <Typography
-                    variant="h6"
-                    fontWeight="700"
-                    mt={2}
-                    sx={{ color: "white" }}
-                >
-                    {text}
-                </Typography>
-            </Section>
-        </>
+        <Section sx={{ background: `url(${MainLogo})`, backgroundSize: 'cover', backgroundPosition: "center center", color: theme.palette.secondary.contrastText }}>
+            <Typography
+                variant="h3"
+                fontWeight="800"
+            >
+                최호진's 포트폴리오
+            </Typography>
+            <Typography
+                variant="h5"
+                fontWeight="800"
+                mt={10}>
+                안녕하세요.
+            </Typography>
+            <Typography
+                variant="h5"
+                fontWeight="800"
+                my={5}
+            >
+                {text}
+            </Typography>
+            <Button
+                variant="contained"
+                sx={{ boxShadow: 0, borderRadius: 10, pl: 5, pr: 4, py: 2, color: theme.palette.secondary.main, fontWeight: 700, fontSize: '16px' }}
+            >
+                더보기&nbsp;<KeyboardDoubleArrowDownIcon fontSize="medium" />
+            </Button>
+        </Section>
     );
 };
 export default Main;
