@@ -1,17 +1,19 @@
 import Header from "../components/Header";
 import Main from "./Main";
-import AboutMe from "./AboutMe";
+import AboutMe from "./Aboutme";
+import MyTimeline from "./MyTimeline";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import Study from "./Study";
 import { ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import { lightTheme, darkTheme } from "../styles/muiTheme";
-
 
 const Home = () => {
     const [mode, setMode] = useState('light');
     const handleToggleTheme = () => {
         mode === 'light' ? setMode('dark') : setMode('light');
     }
-
     const theme = mode === 'light' ? lightTheme : darkTheme;
 
     return(
@@ -19,11 +21,10 @@ const Home = () => {
             <Header handleToggleTheme={handleToggleTheme} mode={mode} />
             <Main />
             <AboutMe />
-            <p>Skills</p>
-            <p>HTML, CSS, JAVASCRIPT, REACT, MATERIAL-UI, C, C++, Java, Python, Git</p>
-            <p>Projects</p>
-            <p>Study</p>
-            <p>Contact</p>
+            <MyTimeline />
+            <Skills />
+            <Projects />
+            <Study />
         </ThemeProvider>
     );
 };

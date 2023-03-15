@@ -1,10 +1,20 @@
-import { AppBar, IconButton, Toolbar, Typography, Box, Button, Collapse, List, ListItem, ListItemText } from '@mui/material'
+import { AppBar, Toolbar, Box, Collapse, List, ListItem, ListItemText } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useState } from 'react';
+import { Link } from 'react-scroll';
+import CommonButton from './Button/CommonButton';
+import IconBtn from './Button/IconBtn';
+import Text from './Text';
 
-const pages = ['About Me', 'Skills', 'Projects', 'Study', 'Contact'];
+const pages = {
+    1: {id: "aboutme", name: 'About Me'},
+    2: {id: "mytimeline", name: 'Timeline'},
+    3: {id: "skills", name: 'Skills'},
+    4: {id: "projects", name: 'Projects'},
+    5: {id: "study", name: 'Study'},
+};
 
 const Header = (props) => {
     const [open, setOpen] = useState(false);
@@ -16,52 +26,50 @@ const Header = (props) => {
         <AppBar
             color="secondary"
             elevation={0}
-            position="static"
+            position="fixed"
         >
             <Toolbar sx={{ justifyContent: "space-between" }}>
-                <Typography
-                    variant="h6"
-                    fontWeight="700"
-                    fontSize="24px"
-                    letterSpacing={1}
-                    color="primary"
-                    p={2}
-                    sx={{ display: { xs: 'flex', md: 'flex'} }}
-                >
-                    CHJ's Portfolio
-                </Typography>
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
-                    {pages.map((page) => (
-                        <Button
-                            key={page}
-                            sx={{ display: 'block', color: 'primary', mx: 'auto', textTransform: 'none', fontWeight: 700 }}
+                <Link to="main" spy={true} smooth={true}>
+                    <CommonButton sx={{ display: { xs: 'flex', md: 'flex'} }} >
+                        <Text
+                            variant="h5"
+                            sx={{ p: 2, letterSpacing: 1 }}
                         >
-                            {page}
-                        </Button>
+                            CHJ's PORTPOLIO
+                        </Text>
+                    </CommonButton>
+                </Link>
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
+                    {Object.keys(pages).map((page) => (
+                        <CommonButton key={pages[page].name} sx={{ display: 'block', mx: 'auto' }}>
+                            <Link to={pages[page].id} spy={true} smooth={true}>
+                                <Text variant="button">{pages[page].name}</Text>
+                            </Link>
+                        </CommonButton>
                     ))}
                 </Box>
-                <IconButton color="primary" onClick={ props.handleToggleTheme } sx={{ display: { xs: 'none', md: 'flex' }, border: '2px solid', borderRadius: 3 }}>
+                <IconBtn onClick={ props.handleToggleTheme } sx={{ display: { xs: 'none', md: 'flex' } }}>
                     { props.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon /> }
-                </IconButton>
-                
+                </IconBtn>
                 <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton onClick={ props.handleToggleTheme } color="primary" sx={{ border: '2px solid', borderRadius: 3, mx: 1 }}>
+                    <IconBtn onClick={ props.handleToggleTheme } sx={{ mx: 1 }}>
                         { props.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon /> }
-                    </IconButton>
-                    <IconButton
-                        color="primary"
-                        onClick={handleClick}
-                        sx={{ border: '2px solid', borderRadius: 3 }}
-                    >
+                    </IconBtn>
+                    <IconBtn onClick={handleClick}>
                         <MenuIcon />
-                    </IconButton>
+                    </IconBtn>
                 </Box>
             </Toolbar>
             <Collapse in={Boolean(open)} unmountOnExit timeout="auto">
                 <List disablePadding>
-                        {pages.map((page) => (
-                            <ListItem key={page}>
-                                <ListItemText primary={<Typography color="primary" fontWeight="700">{page}</Typography>} />
+                        {Object.keys(pages).map((page) => (
+                            <ListItem key={pages[page].name}>
+                                <ListItemText primary={
+                                    <CommonButton key={pages[page].name}>
+                                        <Link to={pages[page].id} spy={true} smooth={true}>
+                                            <Text variant="button">{pages[page].name}</Text>
+                                        </Link>
+                                    </CommonButton>} />
                             </ListItem>
                         ))}
                 </List>

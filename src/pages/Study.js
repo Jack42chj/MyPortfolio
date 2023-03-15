@@ -1,8 +1,11 @@
+import Section from "../components/Section";
+import Text from "../components/Text";
+
 const Study = () => {
     return(
-        <div>
-            
-        </div>
+        <Section id="study">
+            <Text variant="h3">Study</Text>
+        </Section>
     );
 };
 export default Study;
