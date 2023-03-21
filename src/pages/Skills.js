@@ -1,11 +1,11 @@
 import { Stack, Box } from "@mui/material";
 import Section from "../components/Section";
-import Text from "../components/Text";
+import CommonText from "../components/Text/CommonText";
 
 const Skills = () => {
     return(
         <Section id="skills">
-            <Text variant="h3">Skills</Text>
+            <CommonText variant="h3">Skills</CommonText>
             <Stack>
                 <Box>
                     Frontend

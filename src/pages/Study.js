@@ -1,10 +1,10 @@
 import Section from "../components/Section";
-import Text from "../components/Text";
+import CommonText from "../components/Text/CommonText";
 
 const Study = () => {
     return(
         <Section id="study">
-            <Text variant="h3">Study</Text>
+            <CommonText variant="h3">Study</CommonText>
         </Section>
     );
 };

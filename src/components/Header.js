@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-scroll';
 import CommonButton from './Button/CommonButton';
 import IconBtn from './Button/IconBtn';
-import Text from './Text';
+import Text from './Text/CommonText';
 
 const pages = {
     1: {id: "aboutme", name: 'About Me'},

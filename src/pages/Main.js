@@ -1,14 +1,12 @@
-import { useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import MainLogo from "../assets/Main.jpg";
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import { Link } from 'react-scroll';
 import Section from '../components/Section';
-import Text from '../components/Text';
+import MainText from '../components/Text/MainText';
 import CommonButton from '../components/Button/CommonButton';
 
 const Main = () => {
-    const theme = useTheme();
     const completeWord = "\"日就月將\"하는 프론트엔드 개발자를 꿈꾸는 최호진 입니다.";
     const [text, setText] = useState('');
     const [count, setCount] = useState(0);
@@ -34,9 +32,9 @@ const Main = () => {
 
     return(
         <Section id="main" sx={{ background: `url(${MainLogo})`, backgroundSize: 'cover', backgroundPosition: "center center" }}>
-            <Text variant="h3" sx={{ color: theme.palette.secondary.sub }}>최호진's 포트폴리오</Text>
-            <Text variant="h5" sx={{ mt: 5, color: theme.palette.secondary.sub }}>안녕하세요.</Text>
-            <Text variant="h5" sx={{ mt: 10, color: theme.palette.secondary.sub }}>{text}</Text>
+            <MainText variant="h3">최호진's 포트폴리오</MainText>
+            <MainText variant="h5" sx={{ mt: 5 }}>안녕하세요.</MainText>
+            <MainText variant="h5" sx={{ mt: 10 }}>{text}</MainText>
             <Link to="aboutme" spy={true} smooth={true}>
                 <CommonButton
                     variant="contained"

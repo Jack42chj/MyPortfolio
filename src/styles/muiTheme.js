@@ -5,11 +5,15 @@ const lightTheme = createTheme({
         type: 'light',
         primary: {
             main: "#65e6bd",
-            sub: "#ffffff"
+            sub: "#ffffff",
+            junior: "#ffffff",
         },
         secondary: {
-            main: "#f7fafc",
-            sub: "#f7fafc",
+            main: "#e4f5ed",
+            sub: "#edfafc",
+        },
+        third: {
+            main: "#7ecf7e",
         },
     },
     typography: {
@@ -40,6 +44,40 @@ const lightTheme = createTheme({
                 fontSize: '1.1rem',
             },
         },
+        subtitle1: {
+            fontSize: "1rem",
+            '@media (min-width:600px)': {
+                fontSize: '1.1rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.3rem',
+            },
+        },
+        subtitle2: {
+            fontSize: "0.8rem",
+            '@media (min-width:600px)': {
+                fontSize: '1rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.1rem',
+            },
+        },
+        subtitle3: {
+            '@media (min-width:900px)': {
+                fontSize: '1.4rem',
+            },
+            '@media (min-width:1200px)': {
+                fontSize: '1.7rem',
+            },
+        },
+        subtitle4: {
+            '@media (min-width:900px)': {
+                fontSize: '1.1rem',
+            },
+            '@media (min-width:1200px)': {
+                fontSize: '1.4rem',
+            },
+        },
         button: {
             fontSize: "1rem",
         },
@@ -51,11 +89,15 @@ const darkTheme = createTheme({
         type: 'dark',
         primary: {
             main: "#70face",
-            sub: "#49568a",
+            sub: "#011d33",
+            junior: "#20345c",
         },
         secondary: {
-            main: "#011d33",
-            sub: "#dee0df",
+            main: "#49568a",
+            sub: "#ccffcc",
+        },
+        third: {
+            main: "#ccffcc",
         },
     },
     typography: {
@@ -81,6 +123,42 @@ const darkTheme = createTheme({
             fontSize: "0.6rem",
             '@media (min-width:600px)': {
                 fontSize: '0.9rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.1rem',
+            },
+        },
+        subtitle1: {
+            fontSize: "1rem",
+            '@media (min-width:600px)': {
+                fontSize: '1.1rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.3rem',
+            },
+        },
+        subtitle2: {
+            fontSize: "0.8rem",
+            '@media (min-width:600px)': {
+                fontSize: '1rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.1rem',
+            },
+        },
+        subtitle3: {
+            fontSize: "1rem",
+            '@media (min-width:600px)': {
+                fontSize: '1.1rem',
+            },
+            '@media (min-width:900px)': {
+                fontSize: '1.3rem',
+            },
+        },
+        subtitle4: {
+            fontSize: "0.8rem",
+            '@media (min-width:600px)': {
+                fontSize: '1rem',
             },
             '@media (min-width:900px)': {
                 fontSize: '1.1rem',

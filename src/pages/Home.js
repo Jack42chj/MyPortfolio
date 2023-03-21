@@ -17,7 +17,7 @@ const Home = () => {
     const theme = mode === 'light' ? lightTheme : darkTheme;
 
     return(
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme} id="container">
             <Header handleToggleTheme={handleToggleTheme} mode={mode} />
             <Main />
             <AboutMe />

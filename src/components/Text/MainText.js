@@ -3,11 +3,10 @@ import { styled } from "@mui/system";
 
 const StyledTypography = styled(Typography)(({theme}) => ({
     fontWeight: "800",
-    textTransform: "none",
-    color: theme.palette.primary.main,
+    color: theme.palette.secondary.sub,
 }));
 
-const Text = ({ children, variant, sx }) => {
+const MainText = ({ children, variant, sx }) => {
     return(
         <StyledTypography variant={variant} sx={sx}>
             {children}
@@ -15,4 +14,4 @@ const Text = ({ children, variant, sx }) => {
     );
 };
 
-export default Text;
+export default MainText;
