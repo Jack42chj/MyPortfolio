@@ -6,8 +6,8 @@ const StyledAvatar = styled(Avatar)(({theme}) => ({
     border: "5px solid",
     margin: "16px",
     borderColor: theme.palette.primary.main,
-    width: "350px",
-    height: "350px",
+    width: "300px",
+    height: "300px",
     [theme.breakpoints.down('lg')]: {
         width: "250px",
         height: "250px",

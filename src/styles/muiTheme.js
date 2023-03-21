@@ -147,21 +147,19 @@ const darkTheme = createTheme({
             },
         },
         subtitle3: {
-            fontSize: "1rem",
-            '@media (min-width:600px)': {
-                fontSize: '1.1rem',
-            },
             '@media (min-width:900px)': {
-                fontSize: '1.3rem',
+                fontSize: '1.4rem',
+            },
+            '@media (min-width:1200px)': {
+                fontSize: '1.7rem',
             },
         },
         subtitle4: {
-            fontSize: "0.8rem",
-            '@media (min-width:600px)': {
-                fontSize: '1rem',
-            },
             '@media (min-width:900px)': {
                 fontSize: '1.1rem',
+            },
+            '@media (min-width:1200px)': {
+                fontSize: '1.4rem',
             },
         },
         button: {
